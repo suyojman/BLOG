@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>{{post.title}}</h2> 
+<p>{{post.body}}</p>
+{% if user.is_authenticated %}
+<p><a href="{% url 'edit_post' post.pk %}">Edit</a></p>
+<p><a href="{% url 'delete_post' post.pk %}">Delete</a></p>
+{% endif %}
+<p><a href="{% url 'blog' %}">Back</a></p>
+{% endblock %}
